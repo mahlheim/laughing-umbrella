@@ -1,11 +1,9 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+// selects bigger html elements
 var timeDisplayEl = $('#currentDay');
 var scheduleHour = $('time-block');
 var textArea = $('textarea');
-var saveButton = $('button');
 
+// selects each time block
 var nineAm = $('#09');
 var tenAm = $('#10');
 var elevenAm = $('#11');
@@ -16,7 +14,18 @@ var threePm = $('#15');
 var fourPm = $('#16');
 var fivePm = $('#17');
 
-var rows = $('row');
+// selects each save button
+var nineAmButton = $('#button-09');
+var tenAmButton = $('#button-10');
+var elevenAmButton = $('#button-11');
+var twelvePmButton = $('#button-12');
+var onePmButton = $('#button-13');
+var twoPmButton = $('#button-14');
+var threePmButton = $('#button-15');
+var fourPmButton = $('#button-16');
+var fivePmButton = $('#button-17');
+
+// creates a variable that holds current hour, comparing hour on schedule to this variable changes each time block's color
 var now = dayjs().format('HH');
 
 // displays the time
@@ -25,9 +34,10 @@ function displayTime() {
   timeDisplayEl.text(rightNow);
 }
 
+// updates the time every second
+setInterval(displayTime, 1000);
 
-function workDay() {
-  // TODO: Add a listener for click events on the save button. This code should
+// TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
@@ -35,13 +45,19 @@ function workDay() {
   // useful when saving the description in local storage?
 
 
-  
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
 
+
+
+
+
+
+
+
+
+
+
+// applies past, present, or future class to each time block by comparing the id to the current hour
+function workDay() {
   var nineAmCompare = $(nineAm).attr("id");
       if (now === nineAmCompare) {
         nineAm.addClass('present');
@@ -122,16 +138,15 @@ function workDay() {
       } else if (now > fivePmCompare) {
         fivePm.addClass('past');
       };
+};
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   
-};
 
 // calls function that displays current time
 displayTime();
-// allows the time to be updated every second
-setInterval(displayTime, 1000);
-// calls main function
+
+// calls function that controls color of the time blocks
 workDay();
