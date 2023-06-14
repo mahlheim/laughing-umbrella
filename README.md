@@ -12,7 +12,7 @@ N/A
 
 Navigate to the site. The top of the page updates the time and date to the second. The time blocks are color coded: gray is past, red is current, and green is future. Click the time block(s) you wish to enter an appointment and type. Click the save button to store the information. Any stored information will remain in the schedule until it is updated or the local storage is cleared.
 
-url: https://mahlheim.github.io/laughing-umbrella/
+url: https://mahlheim.github.io/laughing-umbrella/ 
 
 
     ![screengrab](./assets/images/screengrab.png)
