@@ -15,6 +15,7 @@ Navigate to the site. The top of the page updates the time and date to the secon
 url: https://mahlheim.github.io/laughing-umbrella/ 
 
     ![screengrab](assets/screengrab.png)
+    
 ![screengrab](assets/screengrab.png)
 
 # Credits
